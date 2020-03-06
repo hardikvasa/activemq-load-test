@@ -1,0 +1,3 @@
+Build with: mvn clean package
+Edit run.sh to match configuration and start the test with run.sh
+Metrics will be reported in the console.

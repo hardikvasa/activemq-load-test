@@ -1,0 +1,5 @@
+com/upwork/hermes/traffic/RunMain.class
+com/upwork/hermes/traffic/Producer.class
+com/upwork/hermes/traffic/TrafficApplication.class
+com/upwork/hermes/traffic/TrafficModule.class
+com/upwork/hermes/traffic/Subscriber.class
