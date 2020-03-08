@@ -52,6 +52,9 @@ public class TrafficApplication implements Runnable {
 
     @CommandLine.Option(names = {"-pd", "--producer-delay"}, description = "Producer Delay, rate is 1000/delay msg/sec per producer")
     private int producerDelay = 0;
+    
+    @CommandLine.Option(names = {"-si", "--start-index"}, description = "Start index for topics numbering")
+    private int startIndex = 0;
 
     @Override
     public void run() {
@@ -75,7 +78,7 @@ public class TrafficApplication implements Runnable {
         final Timer dlqConsumerTimer = metricRegistry.timer("consumer-dlq-timer");
 
         // 1. Create producers, consumers
-        for (int i = 0; i < topics; i++) {
+        for (int i = startIndex; i < startIndex + topics; i++) {
             synchronized (synchronised) {
                 if (shuttingDown) {
                     return;
